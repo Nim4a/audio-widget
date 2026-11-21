@@ -1,0 +1,15 @@
+/target
+/build.log
+*.exe
+*.png
+*.ps1
+*.gadget
+*.lnk
+*.pdb
+/.cargo
+/reg2.py
+/reg_sidebar.py
+/enum2.cs
+/enum2.exe
+/gen_ico.py.bak
+__pycache__/
