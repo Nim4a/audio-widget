@@ -304,7 +304,7 @@ impl eframe::App for App {
             _ => {}
         }
         self.hide_cnt += 1;
-        if self.hide_cnt == 3 { ctx.send_viewport_cmd(egui::ViewportCommand::Minimized(true)); }
+        if self.hide_cnt == 3 && std::env::var("AW_SHOW").is_err() { ctx.send_viewport_cmd(egui::ViewportCommand::Minimized(true)); }
         while let Ok(s) = self.state_rx.try_recv() {
             // while the user is adjusting, keep our local vol/mute so stale helper reads don't yank the slider
             let guarding = match self.hold { Some(t) => t.elapsed() < Duration::from_millis(900), None => false };

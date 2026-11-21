@@ -4,6 +4,27 @@ A modern, borderless, semi-transparent **system volume controller for Windows**,
 
 Lives as a **single tray icon** in the notification area (right side of the taskbar). No taskbar button, no floating window until you ask for it.
 
+## فارسی
+
+**Audio Widget** یک کنترل‌کنندهٔ صدای سیستم برای ویندوز است — مدرن، بدون حاشیه، با پس‌زمینهٔ نیمه‌شفاف — نوشته‌شده با **Rust (egui)** و یک هلپر کوچک **C# (CoreAudio)**. بدون پایتون در زمان اجرا.
+
+- **فقط یک آیکون در tray** (سمت راست taskbar): بدون دکمهٔ taskbar و بدون پنجرهٔ شناور تا وقتی خودتان بخواهید. کلیک چپ = نمایش/مخفی؛ کلیک راست = خروج.
+- **کارت شیشه‌ای بدون حاشیه**: شفافیت پس‌زمینه و گردی گوشه‌ها قابل تنظیم.
+- **اسلایدر صدا + چرخ موس** روی کارت (نرم و بدون پرش؛ مقدار تا پایان تنظیم کاربر حفظ می‌شود).
+- **میوت**، **سوییچ دستگاه خروجی** (لیست همهٔ دستگاه‌های فعال + علامت پیش‌فرض).
+- **پنل تنظیمات**: رنگ accent (۶ حالت)، شفافیت، گردی گوشه، اندازه (S/M/L)، همیشه روی پنجره‌ها، اجرا با ویندوز، dock اختیاری زیر گجت‌های 8GadgetPack.
+- تنظیمات در `%APPDATA%\AudioWidget\settings.ini` ذخیره می‌شود.
+
+**اجرا:** هلپر را با `helper\build.cmd` بسازید و `AudioSwitch.exe` را در `%LOCALAPPDATA%\AudioSwitch\` بگذارید؛ سپس `cargo build --release` و اجرای `audio_widget.exe` (همان اول به tray می‌رود). `widget.ico` باید کنار exe باشد.
+
+**کنترل‌های tray:** کلیک چپ = باز/بسته · کلیک راست = خروج · دکمهٔ `—` = برگشت به tray · چرخ‌دنده = تنظیمات · `✕` = خروج.
+
+## Screenshots
+
+| widget | settings |
+|---|---|
+| ![widget](docs/screenshot.png) | ![settings](docs/screenshot_settings.png) |
+
 ## Features
 
 - **Tray-only presence**: starts hidden (minimized, no taskbar button). Left-click the tray icon to show/hide the widget; right-click to exit.
